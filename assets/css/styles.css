@@ -1,0 +1,110 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+:root {
+
+    /*Cores*/
+    --primary-color: #10151b;
+    --secondary-color: #2a2a2a;
+    --background-color-light: #e3e3e3;
+    --background-color-dark: #10151b;
+    --font-size-base: 16px;
+    --title-font-size:20px;
+    --font-family-base: 'Arial', sans-serif;
+    --text-color: #ffffff;
+    --heading-color: #1a1a1a;
+    --link-color: #d5d5d5;
+    --link-hover-color: #1abc9c;
+    --border-color: #dddddd;
+    
+    /* Tipografia */
+    --font-family-base: 'Arial', sans-serif;
+    --heading-font-family: 'Arial', sans-serif;
+    --heading-font-weight: bold;
+    --line-height-base: 1.6;
+    --letter-spacing: 0.5px;
+    
+    /* Espaçamento */
+    --padding-base: 24px;
+    --margin-base: 20px;
+    --gap-base: 16px;
+    --border-radius: 8px;
+    
+    /* Tamanhos */
+    --max-width: 1200px;
+    --container-width: 1000px;
+    --button-height: 40px;
+    --button-padding: 10px 20px;
+    
+    /* Sombras */
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    
+    /* Outros */
+    --transition-duration: 0.3s;
+    --z-index-base: 1;
+    --opacity: 0.9;
+}
+/* Estilos básicos para o FOOTER */
+footer {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    height: 15vh;
+    padding: 20px;
+    text-align: center;
+    font-size: 8px;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+h1{
+    font-family: var(--heading-font-family);
+    font-size: var(--title-font-size);
+    font-weight: var(--heading-font-weight);
+}
+p{
+    color: var(--primary-color);
+}
+/* Estilos básicos para o CONTAINER flex */
+.container-flex{
+    background: var(--background-color-light);
+    display: flex;
+    height: 100vh;
+    font-family: var(--font-family-base);
+}
+/* Estilos básicos para o MENU */
+.menu-flex{
+    width: 200px;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    padding: var(--padding-base);
+    
+}
+/* Estilos básicos para o MAIN */
+.main-flex{
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+    .header-flex{
+        background-color: var(--primary-color);
+        padding: var(--padding-base);
+        justify-content: center;
+        display: flex;
+        
+    }
+
+    .content-flex{
+        padding: var(--padding-base);
+        color: var(--primary-color);
+
+    }
+
+#menu{
+    position: fixed;
+    top: 0;
+}
