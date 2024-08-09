@@ -74,13 +74,19 @@ p{
     display: flex;
     height: 100vh;
     font-family: var(--font-family-base);
+    flex-direction: row;
+    margin-left: 212px;
 }
 /* Estilos básicos para o MENU */
 .menu-flex{
-    width: 200px;
+    width: 180px;
     color: var(--text-color);
     background-color: var(--secondary-color);
     padding: var(--padding-base);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
     
 }
 /* Estilos básicos para o MAIN */
@@ -89,6 +95,8 @@ p{
     display: flex;
     flex-direction: column;
     width: 100%;
+    
+
 }
     .header-flex{
         background-color: var(--primary-color);
