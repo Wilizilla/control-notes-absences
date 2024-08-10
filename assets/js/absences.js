@@ -8,3 +8,5 @@ const maxAbsences = 0.25 * classesDays;
 console.log(classesDays);
 console.log(Math.ceil(maxAbsences));
 //console.log(Number.isInteger(Math.ceil(maxAbsences)));
+
+function calculateAbsences ()
