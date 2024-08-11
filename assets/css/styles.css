@@ -6,18 +6,19 @@
 :root {
 
     /*Cores*/
-    --primary-color: #0aa485;
+    --primary-color: #0346ce;
     --secondary-color: #2a2a2a;
     --background-color-light: #dcdcdc;
     --background-color-dark: #10151b;
     --text-color: #ffffff;
+    --paragraph-text-color: #10151b;
     --label-color: #6f6f6f;
-    --heading-color: #1abc9c;
+    --heading-color: #10151b;
     --link-color: #d5d5d5;
-    --link-hover-color: #1abc9c;
+    --link-hover-color: #0346ce;
     --border-color: #616161;
     --box-color-light: #ffffff;
-    --button-color: #1abc9c;
+    --button-color: #0346ce;
 
     /*font size*/
     --font-size-xs: 8px;
@@ -43,12 +44,15 @@
     --padding-base: 24px;
     --margin-base: 20px;
 
+    --gap-xxl: 48px;
     --gap-xl: 32px;
     --gap-l: 24px;
     --gap-m: 16px;
     --gap-s: 8px;
     --gap-xs: 4px;
 
+    --border-radius-xl: 32px;
+    --border-radius-l: 16px;
     --border-radius-m: 8px;
     --border-radius-s: 4px;
     --border-radius-xs: 2px;
@@ -109,11 +113,12 @@ a{
 }
 
 button{
-    height: var(--gap-xl);
+    height: var(--gap-xxl);
     background-color: var(--button-color);
     border: none;
-    border-radius: var(--border-radius-s);
+    border-radius: var(--border-radius-xl);
     color: var(--text-color);
+    margin: var(--gap-m) var(--gap-xs) var(--gap-m) var(--gap-xs);
 
 }
 
@@ -150,7 +155,8 @@ button{
     color: var(--primary-color);
     height: 100vh;
     justify-content: center;
-    
+    background-color: var(--background-color-light);
+    align-items: center;
 }
 
 /* Estilos básicos para o MAIN */
@@ -167,6 +173,8 @@ button{
     justify-content: center;
     display: flex;
     font-weight: var(--font-weight-heading);
+    height: var(--gap-s);
+    align-items: center;
     
 }
 
@@ -194,6 +202,7 @@ button{
     flex-direction: column;
     justify-content:center; 
     text-align: -webkit-center;
+    color: var();
 
 }
 
@@ -217,6 +226,9 @@ button{
     font-size: var(--font-size-l);
     row-gap: var(--gap-xs);
     background-color: var(--background-color-light);
+    text-align: right;
+    padding-right: var(--gap-m);
+
 }
 
 .simple-form-label{
@@ -225,10 +237,16 @@ button{
     font-weight: var(--font-weight-label);
     color: var(--label-color);
     padding-left: var(--gap-xs);
+    text-align: left;
+    text-indent: var(--gap-xs);
 
 }
 
 .box-stile{
     justify-content: center;
     text-align: center;
+}
+
+.large-char{
+    font-size: 2em;
 }

@@ -8,37 +8,47 @@
 </head>
 <body>
     <div class="main-flex">
+        <!--Inicio-->
 
         <!--Header-->
             <div class="header-flex">
-                <h1>Controle de notas</h1>
+                <h1> 
+                   Controle de notas
+                </h1>
             </div>
             
-        <!--conteudo-->
+            <!--conteudo-->
             <div class="content-flex">
-                <form class="simple-form" action="#" method="post">
-                    <h2>Média</h2>
 
-                    <label class="simple-form-label" for="form-n1">Qual sua nota em N1?</label>
-                    <input class="simple-input" id="form-n1" type="text" name="N1" maxlength="2" inputmode="numeric" pattern="\d*">
-                    
-                    <label class="simple-form-label" for="form-ap">Qual sua nota em AP?</label>
-                    <input class="simple-input" id="form-ap" type="text" name="AP" maxlength="2" inputmode="numeric" pattern="\d*">
-                    
-                    <label class="simple-form-label" for="form-ai">Qual sua nota em AI?</label>
-                    <input class="simple-input" id="form-ai" type="text" name="AI" maxlength="2" inputmode="numeric" pattern="\d*">
-                    
-                    <label class="simple-form-label" for="form-n3">Qual sua nota em N3?</label>
-                    <input class="simple-input" id="form-n3" type="text" name="N3" maxlength="2" inputmode="numeric" pattern="\d*">
-                    
-                    <button type="submit">Enviar notas</button>
+                <div class="box-stile">
+                    <form id="form-grades" class="simple-form" action="#" method="post">
+                        <div class="form-title">
+                            <h2> <span class="large-char">📝</span> Notas</h2>
+                        </div>
 
+                        <div id="form-decoration"> </div>
 
-                </form>
+                        <label class="simple-form-label" for="form-n1">Qual sua nota em N1?</label>
+                        <input class="simple-input" id="form-n1" type="text" name="N1" maxlength="2" inputmode="numeric" pattern="\d*">
+                        
+                        <label class="simple-form-label" for="form-ap">Qual sua nota em AP?</label>
+                        <input class="simple-input" id="form-ap" type="text" name="AP" maxlength="2" inputmode="numeric" pattern="\d*">
+                        
+                        <label class="simple-form-label" for="form-ai">Qual sua nota em AI?</label>
+                        <input class="simple-input" id="form-ai" type="text" name="AI" maxlength="2" inputmode="numeric" pattern="\d*">
+                        
+                        <label class="simple-form-label" for="form-n3">Qual sua nota em N3?</label>
+                        <input class="simple-input" id="form-n3" type="text" name="N3" maxlength="2" inputmode="numeric" pattern="\d*">
+                        
+                        <button type="submit">Calcular a média</button>
+    
+    
+                    </form>
+                </div>
             </div>
 
-        <!--Footer-->
-        <footer class="footer-flex">
+            <!--Footer-->
+            <footer class="footer-flex">
             <p class="footer-flex-item">&copy; 2024 Grades and Abscences. Todos os direitos reservados.</p>
             <p class="footer-flex-item">
                 <a href="sobre.html">Sobre</a> | 
@@ -46,11 +56,11 @@
                 <a href="privacidade.html">Política de Privacidade</a>
             </p>
         </footer>
+
+        <script src="assets/js/grades-v2.js"></script>
+
+        <!--Fim-->
     </div>
-    
-  <!--  <script src="/assets/js/grades.js"></script>
-    <script src="/assets/js/absences.js"></script>
-    -->
     
 </body>
 </html>
