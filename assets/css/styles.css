@@ -112,6 +112,13 @@ a{
     text-decoration: none;
 }
 
+p{
+    font-family: var(--heading-font-family);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-paragraph);
+    color: var(--paragraph-text-color);
+}
+
 button{
     height: var(--gap-xxl);
     background-color: var(--button-color);
@@ -146,6 +153,7 @@ button{
 .receive-section{
     display: flex;
     flex-grow: 1;
+    flex-direction: column;
     
 }
 
@@ -157,6 +165,8 @@ button{
     justify-content: center;
     background-color: var(--background-color-light);
     align-items: center;
+    gap: var(--gap-xxl);
+
 }
 
 /* Estilos básicos para o MAIN */
@@ -175,6 +185,7 @@ button{
     font-weight: var(--font-weight-heading);
     height: var(--gap-s);
     align-items: center;
+    color: var(--text-color);
     
 }
 
@@ -185,7 +196,7 @@ button{
     gap: var(--gap-s);
 }
 
-.simple-form{
+.simple-div{
     display: flex;
     flex-direction: column; 
     width: 45vh;
@@ -197,7 +208,7 @@ button{
     
 }
 
-.form-title{
+.titles{
     display: flex;  
     flex-direction: column;
     justify-content:center; 
@@ -242,11 +253,24 @@ button{
 
 }
 
-.box-stile{
+.box-style{
     justify-content: center;
     text-align: center;
+    gap: var(--gap-xxl);
 }
 
 .large-char{
-    font-size: 2em;
+    font-size: 1.7em;
+}
+
+.results{
+    display: flex;
+    height: 100%;
+    flex-direction: column; 
+    width: 45vh;
+    padding: var(--gap-xl);
+    gap: var(--gap-xs);
+    background-color: var(--box-color-light);
+    border-radius: var(--border-radius-m);
+    box-shadow: var(--box-shadow);
 }

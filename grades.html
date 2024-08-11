@@ -7,43 +7,65 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
-    <div class="main-flex">
+    <div id="main-div" class="main-flex">
         <!--Inicio-->
 
         <!--Header-->
             <div class="header-flex">
                 <h1> 
-                   Controle de notas
+                    Calculadora de notas
                 </h1>
             </div>
             
             <!--conteudo-->
             <div class="content-flex">
 
-                <div class="box-stile">
-                    <form id="form-grades" class="simple-form" action="#" method="post">
+                <div class="box-style">
+                    <form id="form-grades" class="simple-div" action="#" method="post">
                         <div class="form-title">
-                            <h2> <span class="large-char">📝</span> Notas</h2>
+                            <h2> <span class="large-char">🎤</span>  </br> Calculadora de notas</h2>
                         </div>
 
                         <div id="form-decoration"> </div>
 
                         <label class="simple-form-label" for="form-n1">Qual sua nota em N1?</label>
-                        <input class="simple-input" id="form-n1" type="text" name="N1" maxlength="2" inputmode="numeric" pattern="\d*">
+                        <input class="simple-input" id="form-n1" type="text" name="N1" maxlength="4" inputmode="numeric" pattern="\d*">
                         
                         <label class="simple-form-label" for="form-ap">Qual sua nota em AP?</label>
-                        <input class="simple-input" id="form-ap" type="text" name="AP" maxlength="2" inputmode="numeric" pattern="\d*">
+                        <input class="simple-input" id="form-ap" type="text" name="AP" maxlength="4" inputmode="numeric" pattern="\d*">
                         
                         <label class="simple-form-label" for="form-ai">Qual sua nota em AI?</label>
-                        <input class="simple-input" id="form-ai" type="text" name="AI" maxlength="2" inputmode="numeric" pattern="\d*">
+                        <input class="simple-input" id="form-ai" type="text" name="AI" maxlength="4" inputmode="numeric" pattern="\d*">
                         
                         <label class="simple-form-label" for="form-n3">Qual sua nota em N3?</label>
-                        <input class="simple-input" id="form-n3" type="text" name="N3" maxlength="2" inputmode="numeric" pattern="\d*">
+                        <input class="simple-input" id="form-n3" type="text" name="N3" maxlength="4" inputmode="numeric" pattern="\d*">
                         
                         <button type="submit">Calcular a média</button>
     
     
                     </form>
+                </div>
+
+                <div class="box-stile">
+                    <div class="simple-div">
+                        <div class="titles">
+                            <h2> <span class="large-char">📚</span>  </br>Resultado</h2>
+                        </div>
+                        <div id="form-decoration"> </div>
+                        
+                        <p>   Nota em N1:</p>
+                        <p id="p-n1"></p>
+
+                        <p>   Nota em N2:</p>
+                        <p id="p-n2"></p>
+
+                        <p>   Nota em N3:</p>
+                        <p id="p-n3"></p>
+                        
+                        <p>   Média final:</p>
+                        <p id="p-media"></p>
+
+                    </div>
                 </div>
             </div>
 
