@@ -7,18 +7,28 @@
 
     /*Cores*/
     --primary-color: #0346ce;
-    --secondary-color: #2a2a2a;
-    --background-color-light: #dcdcdc;
+    --primary-color-opacity: #0347ce10;
+    --secondary-color: #10151b;
+    --third-color: #4080ff;
+    --background-color-light: #d5d5d5;
     --background-color-dark: #10151b;
     --text-color: #ffffff;
     --paragraph-text-color: #10151b;
     --label-color: #6f6f6f;
+    --text-field-color: #eaeaea;
     --heading-color: #10151b;
     --link-color: #d5d5d5;
-    --link-hover-color: #0346ce;
-    --border-color: #616161;
+    --link-hover-color: #4080ff;
+    --border-color: #e8e8e8;
     --box-color-light: #ffffff;
     --button-color: #0346ce;
+    --button-hover-color: #4080ff;
+    --alert-color: #ff4060;
+    --alert-text-color: #842132;
+    --alert-color-opacity:#ff406010;
+    --success-color:#05ad5c;
+    --success-text-color:#086437;
+    --success-color-opacity:#15dc7c1b;
 
     /*font size*/
     --font-size-xs: 8px;
@@ -44,6 +54,7 @@
     --padding-base: 24px;
     --margin-base: 20px;
 
+    --gap-xxxl: 64px;
     --gap-xxl: 48px;
     --gap-xl: 32px;
     --gap-l: 24px;
@@ -57,26 +68,11 @@
     --border-radius-s: 4px;
     --border-radius-xs: 2px;
     
-    /* outras medidas */
-    --max-width: 1200px;
-    --container-width: 1000px;
-    --button-height: 40px;
-    --button-padding: 10px 20px;
     
     /* Sombras */
     --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.089);
     --box-shadow-inner: -2px -8px 12px rgba(0, 0, 0, 0.567);
     --text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-
-    /* Stroke */
-    --stroke-width-s: 1px;
-    --stroke-width-m: 2px;
-
-    
-    /* Outros */
-    --transition-duration: 0.3s;
-    --z-index-base: 1;
-    --opacity: 0.9;
 }
 
 /* Estilos básicos para o FOOTER */
@@ -91,6 +87,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
 h1{
@@ -113,10 +110,10 @@ a{
 }
 
 p{
-    font-family: var(--heading-font-family);
+    /* font-family: var(--heading-font-family);
     font-size: var(--font-size-m);
     font-weight: var(--font-weight-paragraph);
-    color: var(--paragraph-text-color);
+    color: var(--paragraph-text-color); */
 }
 
 button{
@@ -127,6 +124,13 @@ button{
     color: var(--text-color);
     margin: var(--gap-m) var(--gap-xs) var(--gap-m) var(--gap-xs);
 
+}
+
+hr{
+    margin: var(--gap-m);
+    background-color: var(--label-color);
+    border: none; /* Remove a borda padrão */
+    height: 0.5px; /* Define a espessura da linha */
 }
 
 /* Estilos básicos para o CONTAINER flex */
@@ -154,39 +158,37 @@ button{
     display: flex;
     flex-grow: 1;
     flex-direction: column;
+}
+
+/* Estilos básicos para o MAIN */
+.main-flex{
+    display: flex;
+    color: var(--text-color);
+    flex-direction: column;
+}
+
+.header-flex{
+    display: flex;
+    background-color: var(--primary-color);
+    padding: var(--gap-m);
+    justify-content: space-between;
+    height: var(--gap-m);
+    align-items: center;
+    color: var(--text-color);
+}
+
+.header-item {
+    padding: var(--gap-xs);
     
 }
 
 .content-flex{
     display: flex;
-    padding: var(--padding-base);
+    padding: 8vh;
     color: var(--primary-color);
-    height: 100vh;
     justify-content: center;
     background-color: var(--background-color-light);
-    align-items: center;
     gap: var(--gap-xxl);
-
-}
-
-/* Estilos básicos para o MAIN */
-.main-flex{
-    color: var(--text-color);
-    flex-direction: column;
-    flex-grow: 1;
-    
-}
-
-.header-flex{
-    background-color: var(--primary-color);
-    padding: var(--padding-base);
-    justify-content: center;
-    display: flex;
-    font-weight: var(--font-weight-heading);
-    height: var(--gap-s);
-    align-items: center;
-    color: var(--text-color);
-    
 }
 
 .footer-flex{
@@ -196,28 +198,41 @@ button{
     gap: var(--gap-s);
 }
 
+.footer-flex-item{
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-paragraph);
+    color: var(--text-color);
+}
+
+/* mantém as duas divs do mesmo tamanho */
+.box-style{
+    display: flex;
+    
+}
+
+/* Controla os box da calculadora e do resultado */
+
 .simple-div{
+    text-align: center;
     display: flex;
     flex-direction: column; 
+    border-radius: var(--border-radius-s);
     width: 45vh;
     padding: var(--gap-xl);
-    gap: var(--gap-xs);
     background-color: var(--box-color-light);
-    border-radius: var(--border-radius-m);
-    box-shadow: var(--box-shadow);
-    
+    border-radius: var(--border-radius-l);
+    box-shadow: var(--box-shadow); 
 }
 
 .titles{
     display: flex;  
     flex-direction: column;
     justify-content:center; 
-    text-align: -webkit-center;
-    color: var();
 
 }
 
-#form-decoration{
+#title-decoration{
     height: 4px;
     width: 20%;
     background-color: var(--primary-color);
@@ -228,49 +243,86 @@ button{
     border-radius: var(--border-radius-m);
 }
 
-.simple-input{
+.simple-input{  
     margin-bottom: var(--gap-m); 
     border-radius: var(--border-radius-s);
-    border-width: var(--stroke-width-s);
     height: var(--gap-xl);
     border: none;
-    font-size: var(--font-size-l);
-    row-gap: var(--gap-xs);
-    background-color: var(--background-color-light);
+    font-size: var(--font-size-m);
+    background-color: var(--text-field-color);
     text-align: right;
     padding-right: var(--gap-m);
-
+    box-shadow: inset var(--box-shadow);
 }
 
-.simple-form-label{
+.simple-form-label{   
     font-family: var(--font-family-base);
     font-size: var(--font-size-s);
     font-weight: var(--font-weight-label);
     color: var(--label-color);
-    padding-left: var(--gap-xs);
     text-align: left;
     text-indent: var(--gap-xs);
-
-}
-
-.box-style{
-    justify-content: center;
-    text-align: center;
-    gap: var(--gap-xxl);
-}
-
-.large-char{
-    font-size: 1.7em;
+    margin-bottom: var(--border-radius-s);
 }
 
 .results{
-    display: flex;
-    height: 100%;
-    flex-direction: column; 
-    width: 45vh;
-    padding: var(--gap-xl);
-    gap: var(--gap-xs);
-    background-color: var(--box-color-light);
+    /* background-color: var(--text-field-color); */
     border-radius: var(--border-radius-m);
-    box-shadow: var(--box-shadow);
+    padding: var(--gap-s);
+    border: 0.5px solid var(--label-color);
+}
+
+.result-item{
+    display: flex;
+    flex-direction: row;
+    gap: var(--gap-l);
+    margin: var(--gap-m); 
+    text-align: left;
+    border-color: #6f6f6f;
+    align-items: center;
+}
+
+.grade-result{
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-l);
+    color: var(--third-color);
+}
+
+.large-char{
+    font-size: 1.5em;
+}
+
+.emoji-char{
+    font-size: 2em;
+}
+
+.menssage-item{
+    display: flex;
+    margin-top: var(--gap-m);
+    align-items: right;
+    padding: var(--gap-m);
+    border: 1px solid;
+    border-radius: var(--border-radius-m);
+    font-family: var(--font-family-base);
+    font-size: var(--font-size-s);
+    align-items: center;
+    gap: var(--gap-s);
+}
+
+#message-alert{
+    background-color: var(--alert-color-opacity);
+    border-color: var(--alert-color);
+    color: var(--alert-text-color);
+}
+
+#message-success{
+    background-color: var(--success-color-opacity);
+    border-color: var(--success-color);
+    color: var(--success-text-color);
+}
+
+#message-default{
+    background-color: var(--primary-color-opacity);
+    border-color: var(--third-color);
+    color: var(--primary-color);
 }
