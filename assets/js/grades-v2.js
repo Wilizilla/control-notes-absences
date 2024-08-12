@@ -48,7 +48,6 @@ formulario.addEventListener('submit', function(event) {
             console.log('calculei substituindo n1')
         }
 
-        console.log('status: ' + statusNow)
         console.log('Média: ' + media)
 
         // configura a mensagem
@@ -57,7 +56,6 @@ formulario.addEventListener('submit', function(event) {
             document.getElementById("text-alert").innerHTML = "Atenção! Você precisa tirar " + prevGrade + " para ser aprovado";
             document.getElementById("emoji-alert").innerHTML = "😱";
             
-            console.log("status: " + statusNow );
             console.log("Média: " + media );
 
         } else if (media >= 6 && n3 >= 0){
@@ -65,7 +63,6 @@ formulario.addEventListener('submit', function(event) {
             document.getElementById("text-success").innerHTML = "Parabéns!!! Você foi aprovado";
             document.getElementById("emoji-alesuccessrt").innerHTML = "🎉";
 
-            console.log("status: " + statusNow );
             console.log("Média: " + media );
 
         } else if (media < 6 && n3 >= 0) {
