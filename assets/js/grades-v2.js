@@ -18,13 +18,6 @@ formulario.addEventListener('submit', function(event) {
     let media = (n1+n2)/2 ;
     let statusNow;
 
-   /* console.log('n1=', n1 );
-    console.log('ap=', ap );
-    console.log('ai=', ai );
-    console.log('n2=', n2 );
-    console.log('n3=', n3 );
-    console.log('média=', media );*/
-
     function printStatus(media) {
         if( media > 6) { 
             statusNow = ('Aprovado(a)')
@@ -39,7 +32,8 @@ formulario.addEventListener('submit', function(event) {
     };
 
     window.onload = function hideMessage (){
-        document.getElementById("message-default").style.visibility = "hidden";
+        document.getElementById("message-default").style.visibility = "hidden"
+        console.log ('on loading rodando');
 
     }
 
