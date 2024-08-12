@@ -1,81 +1,43 @@
-document.getElementById('form-n1').addEventListener('input', function (e) {
-    let value = e.target.value;
+//Essa parte não foi idéia minha, peguei exemplos da internet e chat gpt
 
-    // Remove qualquer caractere que não seja número
-    value = value.replace(/\D/g, '');
+function inputAjust(inputElement) {
+    inputElement.addEventListener('input', function (e) {
+        let value = e.target.value;
 
-    // Se o valor tiver mais de 4 dígitos, corta para os primeiros 4
-    if (value.length > 4) {
-        value = value.substring(0, 4);
-    }
+        // Remove qualquer caractere que não seja número
+        value = value.replace(/\D/g, '');
 
-    // Adiciona a vírgula para formatar como decimal
-    if (value.length >= 3) {
-        value = value.slice(0, value.length - 2) + '.' + value.slice(value.length - 2);
-    }
+        // Converte para número e limita a 4 dígitos
+        if (value.length > 4) {
+            value = value.substring(0, 4);
+        }
 
-    // Atualiza o valor do campo de texto com a máscara aplicada
-    e.target.value = value;
-    
+        // Se a string estiver vazia, defina o valor como vazio
+        if (value === '') {
+            e.target.value = '';
+            return;
+        }
+
+        // Converte para número decimal
+        let numericValue = parseFloat(value) / 100;
+
+        // Limita o valor a 10.00
+        if (numericValue > 10.00) {
+            numericValue = 10.00;
+        }
+
+        // Atualiza o valor do campo de texto com a máscara aplicada
+        e.target.value = numericValue.toFixed(2);
+    });
+}
+
+// exemplo usando get byid.
+
+/* const inputField = document.getElementById('form-n1');
+inputAjust(inputField);
+ */
+
+document.querySelectorAll('.simple-input').forEach(function(inputElement) {
+    inputAjust(inputElement)
+
 });
-
-document.getElementById('form-ap').addEventListener('input', function (e) {
-    let value = e.target.value;
-
-    // Remove qualquer caractere que não seja número
-    value = value.replace(/\D/g, '');
-
-    // Se o valor tiver mais de 4 dígitos, corta para os primeiros 4
-    if (value.length > 4) {
-        value = value.substring(0, 4);
-    }
-
-    // Adiciona a vírgula para formatar como decimal
-    if (value.length >= 3) {
-        value = value.slice(0, value.length - 2) + '.' + value.slice(value.length - 2);
-    }
-
-    // Atualiza o valor do campo de texto com a máscara aplicada
-    e.target.value = value;
-});
-
-document.getElementById('form-ai').addEventListener('input', function (e) {
-    let value = e.target.value;
-
-    // Remove qualquer caractere que não seja número
-    value = value.replace(/\D/g, '');
-
-    // Se o valor tiver mais de 4 dígitos, corta para os primeiros 4
-    if (value.length > 4) {
-        value = value.substring(0, 4);
-    }
-
-    // Adiciona a vírgula para formatar como decimal
-    if (value.length >= 3) {
-        value = value.slice(0, value.length - 2) + '.' + value.slice(value.length - 2);
-    }
-
-    // Atualiza o valor do campo de texto com a máscara aplicada
-    e.target.value = value;
-});
-
-document.getElementById('form-n3').addEventListener('input', function (e) {
-    let value = e.target.value;
-
-    // Remove qualquer caractere que não seja número
-    value = value.replace(/\D/g, '');
-
-    // Se o valor tiver mais de 4 dígitos, corta para os primeiros 4
-    if (value.length > 4) {
-        value = value.substring(0, 4);
-    }
-
-    // Adiciona a vírgula para formatar como decimal
-    if (value.length >= 3) {
-        value = value.slice(0, value.length - 2) + '.' + value.slice(value.length - 2);
-    }
-
-    // Atualiza o valor do campo de texto com a máscara aplicada
-    e.target.value = value;
-});
-

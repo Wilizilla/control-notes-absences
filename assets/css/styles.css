@@ -123,7 +123,21 @@ button{
     border-radius: var(--border-radius-xl);
     color: var(--text-color);
     margin: var(--gap-m) var(--gap-xs) var(--gap-m) var(--gap-xs);
+    font-size: var(--font-size-m);
+    font-weight: 800;
+}
 
+button:hover{
+    background-color: var(--third-color);
+}
+
+button:active{
+    background-color: var(--secondary-color);
+    transform: scale(0.95);
+}
+
+button:focus {
+    outline-offset: 2px;
 }
 
 hr{
@@ -253,6 +267,10 @@ hr{
     text-align: right;
     padding-right: var(--gap-m);
     box-shadow: inset var(--box-shadow);
+}
+
+.simple-input:focus{
+    background-color: var(--box-color-light);
 }
 
 .simple-form-label{   
