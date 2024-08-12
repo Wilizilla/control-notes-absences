@@ -297,7 +297,6 @@ hr{
 }
 
 .menssage-item{
-    display: flex;
     margin-top: var(--gap-m);
     align-items: right;
     padding: var(--gap-m);
@@ -310,18 +309,21 @@ hr{
 }
 
 #message-alert{
+    display: flex;
     background-color: var(--alert-color-opacity);
     border-color: var(--alert-color);
     color: var(--alert-text-color);
 }
 
 #message-success{
+    display: flex;
     background-color: var(--success-color-opacity);
     border-color: var(--success-color);
     color: var(--success-text-color);
 }
 
 #message-default{
+    display: flex;
     background-color: var(--primary-color-opacity);
     border-color: var(--third-color);
     color: var(--primary-color);

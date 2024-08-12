@@ -36,21 +36,17 @@ formulario.addEventListener('submit', function(event) {
             statusNow = ('Reprovado(a)')
         }
         console.log(statusNow, 'gerado pela func. printStatus')
-    
-    }
+    };
 
-    window.onload = function hideMessages() {
-        document.getElementById("message-alert").style.display = "none";
-        document.getElementById("message-success").style.display = "none";
-        document.getElementById("message-default").style.display = "none";
+    window.onload = function hideMessage (){
+        document.getElementById("message-default").style.visibility = "hidden";
 
     }
 
-
-
-    if (n1 == '') {r
+    if (n1 == '') {
         console.log('Nenhuma nota lançada');
        // document.getElementById("p-n1").innerHTML = `<p>Não há notas disponíveis</p>`;
+       
 
     } else if (ap == '') {
         console.log('N1 = ', n1);
