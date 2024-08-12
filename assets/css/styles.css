@@ -309,21 +309,21 @@ hr{
 }
 
 #message-alert{
-    display: flex;
+    display: none;
     background-color: var(--alert-color-opacity);
     border-color: var(--alert-color);
     color: var(--alert-text-color);
 }
 
 #message-success{
-    display: flex;
+    display: none;
     background-color: var(--success-color-opacity);
     border-color: var(--success-color);
     color: var(--success-text-color);
 }
 
 #message-default{
-    display: flex;
+    display: none;
     background-color: var(--primary-color-opacity);
     border-color: var(--third-color);
     color: var(--primary-color);
