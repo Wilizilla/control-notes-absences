@@ -6,10 +6,10 @@
 :root {
 
     /*Cores*/
-    --primary-color: #0346ce;
+    --primary-color: #ce036f;
     --primary-color-opacity: #0347ce10;
     --secondary-color: #10151b;
-    --third-color: #4080ff;
+    --third-color: #b60463;
     --background-color-light: #d5d5d5;
     --background-color-dark: #10151b;
     --text-color: #ffffff;
@@ -18,11 +18,13 @@
     --text-field-color: #eaeaea;
     --heading-color: #10151b;
     --link-color: #d5d5d5;
-    --link-hover-color: #4080ff;
+    --link-hover-color: #07c1ce;
     --border-color: #e8e8e8;
     --box-color-light: #ffffff;
-    --button-color: #0346ce;
-    --button-hover-color: #4080ff;
+    --button-color: #ce036f;
+    --default-alert: #2267f2;
+    --default-alert-opacity: #4482ff23;
+    --default-text-alert: #0a3690;
     --alert-color: #ff4060;
     --alert-text-color: #842132;
     --alert-color-opacity:#ff406010;
@@ -77,7 +79,7 @@
 
 /* Estilos básicos para o FOOTER */
 footer {
-    background-color: var(--primary-color);
+    background-color: var(--background-color-dark);
     color: var(--text-color);
     height: 15vh;
     padding: 20px;
@@ -342,9 +344,9 @@ hr{
 
 #message-default{
     display: none;
-    background-color: var(--primary-color-opacity);
-    border-color: var(--third-color);
-    color: var(--primary-color);
+    background-color: var(--default-alert-opacity);
+    border-color: var(--default-color);
+    color: var(--default-text-alert);
 }
 
 @media only screen and (max-width: 768px) {
