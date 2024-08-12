@@ -328,3 +328,27 @@ hr{
     border-color: var(--third-color);
     color: var(--primary-color);
 }
+
+@media only screen and (max-width: 768px) {
+
+    .content-flex{
+        display:block;
+        padding: 3vh;
+        color: var(--primary-color);
+        justify-content: center;
+        background-color: var(--background-color-light);
+    }
+
+    .simple-div{
+        text-align: center;
+        display: flex;
+        flex-direction: column; 
+        border-radius: var(--border-radius-s);
+        padding: var(--gap-xl);
+        background-color: var(--box-color-light);
+        border-radius: var(--border-radius-l);
+        box-shadow: var(--box-shadow); 
+        margin-bottom: 16px;
+    }
+
+}
