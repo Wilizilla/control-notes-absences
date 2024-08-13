@@ -198,6 +198,12 @@ hr{
     
 }
 
+#logo-div{
+    display:flex;
+    width: 24px; 
+    height: 24px;
+}
+
 .content-flex{
     display: flex;
     padding: 8vh;
