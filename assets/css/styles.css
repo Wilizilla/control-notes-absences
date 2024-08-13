@@ -38,7 +38,6 @@
     --font-size-m: 16px;
     --font-size-l: 24px;
     --font-size-xl: 64px;
-    --font-family-base: 'Helvética', sans-serif;
 
     
     /* Tipografia */
@@ -53,9 +52,6 @@
     --letter-spacing: 0.5px;
     
     /* Espaçamentos */
-    --padding-base: 24px;
-    --margin-base: 20px;
-
     --gap-xxxl: 64px;
     --gap-xxl: 48px;
     --gap-xl: 32px;
@@ -324,14 +320,14 @@ hr{
 
 .menssage-item{
     margin-top: var(--gap-m);
-    align-items: right;
+    align-items: center; /* mantém o icone e o texto da mensagem centralizados */
     padding: var(--gap-m);
     border: 1px solid;
     border-radius: var(--border-radius-m);
     font-family: var(--font-family-base);
-    font-size: var(--font-size-s);
-    align-items: center;
+    font-size: var(--font-size-m);
     gap: var(--gap-s);
+    text-align:left; /* mantém otexto da mensagem alinhado a esquerda */
 }
 
 #message-alert{
@@ -375,6 +371,11 @@ hr{
         border-radius: var(--border-radius-l);
         box-shadow: var(--box-shadow); 
         margin-bottom: 16px;
+    }
+
+    .box-style{
+        display: flex;
+        justify-content: space-around;
     }
 
 }
