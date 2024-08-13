@@ -4,7 +4,6 @@
     box-sizing: 0;
 }
 :root {
-
     /*Cores*/
     --primary-color: #ce036f;
     --primary-color-opacity: #0347ce10;
@@ -39,16 +38,13 @@
     --font-size-m: 16px;
     --font-size-l: 24px;
     --font-size-xl: 64px;
-
     
     /* Tipografia */
     --font-family-base: 'Helvética', sans-serif;
     --heading-font-family: 'Helvética', sans-serif;
-
     --font-weight-heading: 200;
     --font-weight-paragraph: 400;
     --font-weight-label: 200;
-
     --line-height-base: 1.6;
     --letter-spacing: 0.5px;
     
@@ -66,7 +62,6 @@
     --border-radius-m: 8px;
     --border-radius-s: 4px;
     --border-radius-xs: 2px;
-    
     
     /* Sombras */
     --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.089);
@@ -86,7 +81,6 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 h1{
@@ -108,10 +102,7 @@ a{
 }
 
 p{
-    /* font-family: var(--heading-font-family);
-    font-size: var(--font-size-m);
-    font-weight: var(--font-weight-paragraph);
-    color: var(--paragraph-text-color); */
+    font-family: var(--font-family-base);
 }
 
 button{
@@ -191,7 +182,6 @@ hr{
 
 .header-item {
     padding: var(--gap-xs);
-    
 }
 
 #logo-div{
@@ -225,8 +215,7 @@ hr{
 
 /* mantém as duas divs do mesmo tamanho */
 .box-style{
-    display: flex;
-    
+    display: flex;   
 }
 
 /* Controla os box da calculadora e do resultado */
@@ -247,7 +236,6 @@ hr{
     display: flex;  
     flex-direction: column;
     justify-content:center; 
-
 }
 
 #title-decoration{

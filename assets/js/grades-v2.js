@@ -57,14 +57,14 @@ formulario.addEventListener('submit', function(event) {
         // Configura a mensagem
         if (media < 6 && n3 == '') {
             document.getElementById("message-alert").style.display = "flex";
-            document.getElementById("text-alert").innerHTML = "Atenção! Você precisa tirar " + prevGrade + " em N3 para ser aprovado";
+            document.getElementById("text-alert").innerHTML = "<b>Atenção!</b> Você precisa tirar <b>" + prevGrade + " em N3</b> para ser aprovado";
             document.getElementById("emoji-alert").innerHTML = "🤓";
             
             console.log("Média: " + media );
 
         } else if (media >= 6 && n3 >= 0){
             document.getElementById("message-success").style.display = "flex";
-            document.getElementById("text-success").innerHTML = "Parabéns!!! Você foi aprovado";
+            document.getElementById("text-success").innerHTML = "Parabéns!!! <b>Você foi aprovado</b>";
             document.getElementById("emoji-alesuccessrt").innerHTML = "🎉";
 
             console.log("Média: " + media );
