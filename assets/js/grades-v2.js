@@ -115,7 +115,16 @@ formulario.addEventListener('submit', function(event) {
 
     };
     
-    if (n1 == '') {
+    if (n1 > 10 || ap > 10 || ai > 10 || n3 > 10 ) {
+        resetMsg = clearMsg(); // reseta mensagens
+        resolve = clearGrades(); // reseta variaveis
+
+        document.getElementById("message-alert").style.display = "flex";
+        document.getElementById("text-alert").innerHTML = "Hmmm… Parece que alguma das suas notas está errada.";
+        document.getElementById("emoji-alert").innerHTML = "🫠";
+
+
+    } else if (n1 == '') {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
         

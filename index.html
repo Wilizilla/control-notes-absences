@@ -44,17 +44,21 @@
                         <div id="title-decoration"> </div>
                         
                         <label class="simple-form-label" for="form-n1">Qual sua nota em N1?</label>
-                        <input class="simple-input" id="form-n1" type="text" name="N1" maxlength="5" inputmode="numeric" placeholder="Ex: 0,00">
+                        <input class="simple-input" id="form-n1" type="text" name="N1" maxlength="4" inputmode="numeric" placeholder="0.00">
+                        <span class="input-error-message" id="n1-error"></span>
                         
                         <label class="simple-form-label" for="form-ap">Qual sua nota em AP?</label>
-                        <input class="simple-input" id="form-ap" type="text" name="AP" maxlength="5" inputmode="numeric" placeholder="Ex: 0,00">
-                        
+                        <input class="simple-input" id="form-ap" type="text" name="AP" maxlength="4" inputmode="numeric" placeholder="0.00">
+                        <span class="input-error-message" id="ap-error"></span>
+
                         <label class="simple-form-label" for="form-ai">Qual sua nota em AI?</label>
-                        <input class="simple-input" id="form-ai" type="text" name="AI" maxlength="5" inputmode="numeric" placeholder="Ex: 0,00">
-                        
+                        <input class="simple-input" id="form-ai" type="text" name="AI" maxlength="4" inputmode="numeric" placeholder="0.00">
+                        <span class="input-error-message" id="ai-error"></span>
+
                         <label class="simple-form-label" for="form-n3">Qual sua nota em N3?</label>
-                        <input class="simple-input" id="form-n3" type="text" name="N3" maxlength="5" inputmode="numeric" placeholder="Ex: 0,00">
-                        
+                        <input class="simple-input" id="form-n3" type="text" name="N3" maxlength="4" inputmode="numeric" placeholder="0.00">
+                        <span class="input-error-message" id="n3-error"></span>
+
                         <button id="submit-button" type="submit">Calcular a média</button>
     
     
@@ -113,10 +117,11 @@
             <p class="footer-flex-item">by wilian.ventura@gmail.com</p>
         </footer>
 
-        <script src="assets/js/grades-v2.js"></script>
+        <script src="assets/js/form-validation.js"></script>
         <script src="assets/js/decimal-control.js"></script>
+        <script src="assets/js/grades-v2.js"></script>
         <script src="assets/js/page-scrool.js"></script>
-
+        
         <!--Fim-->
     </div>
     

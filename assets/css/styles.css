@@ -33,7 +33,7 @@
     --success-color-opacity:#15dc7c1b;
 
     /*font size*/
-    --font-size-xs: 8px;
+    --font-size-xs: 10px;
     --font-size-s: 12px;
     --font-size-m: 16px;
     --font-size-l: 24px;
@@ -254,7 +254,7 @@ hr{
 }
 
 .simple-input{  
-    margin-bottom: var(--gap-m); 
+    margin-bottom: var(--gap-s); 
     border-radius: var(--border-radius-s);
     height: var(--gap-xl);
     border: none;
@@ -267,6 +267,18 @@ hr{
 
 .simple-input:focus{
     background-color: var(--box-color-light);
+}
+
+.input-error-message {
+    color: var(--alert-color);
+    font-size: var(--font-size-xs);
+    font-family: var(--font-family-base);
+    margin-bottom: var(--gap-m);
+    text-align: left;
+}
+
+.simple-input:invalid {
+    border: 1px solid var(--alert-color);
 }
 
 .simple-form-label{   

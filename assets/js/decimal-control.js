@@ -1,7 +1,7 @@
 //Essa parte não foi idéia minha, peguei exemplos da internet e chat gpt
 
 function inputAjust(inputElement) {
-    inputElement.addEventListener('input', function (e) {
+    inputElement.addEventListener('change', function (e) {
         let value = e.target.value;
 
         // Remove qualquer caractere que não seja número
@@ -21,10 +21,10 @@ function inputAjust(inputElement) {
         // Converte para número decimal
         let numericValue = parseFloat(value) / 100;
 
-        // Limita o valor a 10.00
-        if (numericValue > 10.00) {
+        // Limita o valor a 10.00 - aqui
+      /*   if (numericValue > 10.00) {
             numericValue = 10.00;
-        }
+        } */
 
         // Atualiza o valor do campo de texto com a máscara aplicada
         e.target.value = numericValue.toFixed(2);
