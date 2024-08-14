@@ -114,13 +114,13 @@ formulario.addEventListener('submit', function(event) {
     document.getElementById("p-media").innerHTML = '--';
 
     };
-    
+
     if (n1 > 10 || ap > 10 || ai > 10 || n3 > 10 ) {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
 
         document.getElementById("message-alert").style.display = "flex";
-        document.getElementById("text-alert").innerHTML = "Hmmm… Parece que alguma das suas notas está errada.";
+        document.getElementById("text-alert").innerHTML = "Hmmm… Parece que há algum erro nas suas notas. </br> <i> Sua nota não pode ser maior que 10.</i>";
         document.getElementById("emoji-alert").innerHTML = "🫠";
 
 

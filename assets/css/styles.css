@@ -257,7 +257,7 @@ hr{
     margin-bottom: var(--gap-s); 
     border-radius: var(--border-radius-s);
     height: var(--gap-xl);
-    border: none;
+    border: 0px solid;
     font-size: var(--font-size-m);
     background-color: var(--text-field-color);
     text-align: right;
@@ -278,7 +278,8 @@ hr{
 }
 
 .simple-input:invalid {
-    border: 1px solid var(--alert-color);
+    border: 2px solid;
+    color: var(--alert-color);;
 }
 
 .simple-form-label{   
