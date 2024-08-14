@@ -168,6 +168,11 @@ hr{
     display: flex;
     color: var(--background-color-light); /*achar*/
     flex-direction: column;
+    /*height: 100vh;*/
+
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
 }
 
 .header-flex{
@@ -192,6 +197,7 @@ hr{
 
 .content-flex{
     display: flex;
+    height: 100%;
     padding: 8vh;
     color: var(--primary-color);
     justify-content: center;
@@ -343,7 +349,8 @@ hr{
 
     .content-flex{
         display:block;
-        padding: 3vh;
+        padding-top: 4vh;
+        padding-bottom: 12vh;
         color: var(--primary-color);
         justify-content: center;
         background-color: var(--background-color-light);
