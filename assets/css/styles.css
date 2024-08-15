@@ -265,8 +265,16 @@ hr{
     box-shadow: inset var(--box-shadow);
 }
 
-.simple-input:focus{
-    background-color: var(--box-color-light);
+/* Para navegadores WebKit (Chrome, Safari, etc.) */
+.simple-input[type="number"]::-webkit-outer-spin-button,
+.simple-input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Para o Firefox */
+.simple-input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 .input-error-message {
@@ -277,9 +285,17 @@ hr{
     text-align: left;
 }
 
-.simple-input:invalid {
+.simple-input-invalid {
     border: 2px solid;
-    color: var(--alert-color);;
+    color: var(--alert-color);
+    margin-bottom: var(--gap-s); 
+    border-radius: var(--border-radius-s);
+    height: var(--gap-xl);
+    font-size: var(--font-size-m);
+    background-color: var(--text-field-color);
+    text-align: right;
+    padding-right: var(--gap-m);
+    box-shadow: inset var(--box-shadow);
 }
 
 .simple-form-label{   

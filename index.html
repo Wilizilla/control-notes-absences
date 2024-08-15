@@ -36,7 +36,7 @@
             <div class="content-flex">
 
                 <div class="box-style">
-                    <form id="form-grades" class="simple-div" action="#" method="post">
+                    <form id="form-grades" class="simple-div" method="post">
                         <div class="form-title">
                             <h2> <span class="large-char">🎤</span>  </br> Suas notas</h2>
                         </div>
@@ -44,19 +44,19 @@
                         <div id="title-decoration"> </div>
                         
                         <label class="simple-form-label" for="form-n1">Qual sua nota em N1?</label>
-                        <input class="simple-input" id="form-n1" type="text" name="N1" maxlength="4" inputmode="numeric" placeholder="0.00">
+                        <input class="simple-input" id="form-n1" type="number" name="N1" inputmode="numeric" placeholder="0,00" pattern="[0-9\d{2}\,\d{2}] " step="0.01">
                         <span class="input-error-message" id="n1-error"></span>
                         
                         <label class="simple-form-label" for="form-ap">Qual sua nota em AP?</label>
-                        <input class="simple-input" id="form-ap" type="text" name="AP" maxlength="4" inputmode="numeric" placeholder="0.00">
+                        <input class="simple-input" id="form-ap" type="number" name="AP" inputmode="numeric" placeholder="0,00" pattern="[0-9\d{2}\,\d{2}]" step="0.01">
                         <span class="input-error-message" id="ap-error"></span>
 
                         <label class="simple-form-label" for="form-ai">Qual sua nota em AI?</label>
-                        <input class="simple-input" id="form-ai" type="text" name="AI" maxlength="4" inputmode="numeric" placeholder="0.00">
+                        <input class="simple-input" id="form-ai" type="number" name="AI" inputmode="numeric" placeholder="0,00" pattern="[0-9\d{2}\,\d{2}]" step="0.01">
                         <span class="input-error-message" id="ai-error"></span>
 
                         <label class="simple-form-label" for="form-n3">Qual sua nota em N3?</label>
-                        <input class="simple-input" id="form-n3" type="text" name="N3" maxlength="4" inputmode="numeric" placeholder="0.00">
+                        <input class="simple-input" id="form-n3" type="number" name="N3" inputmode="numeric" placeholder="0,00" pattern="[0-9\d{2}\,\d{2}]" step="0.01">
                         <span class="input-error-message" id="n3-error"></span>
 
                         <button id="submit-button" type="submit">Calcular a média</button>
