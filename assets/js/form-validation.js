@@ -10,12 +10,6 @@ document.getElementById('form-grades').addEventListener('input', function(event)
     let validationAi = styleAi.value;
     let validationN3 = styleN3.value;
 
-    
-    /* const validationN1 = document.querySelector('#form-n1').value;
-    const validationAp = document.querySelector('#form-ap').value;
-    const validationAi = document.querySelector('#form-ai').value;
-    const validationN3 = document.querySelector('#form-n3').value; */
-    
     // event.preventDefault(); // Impede o envio do formulário se houver campos inválidos
 
     // validação N1 ###################################
@@ -24,7 +18,7 @@ document.getElementById('form-grades').addEventListener('input', function(event)
         styleN1.classList.add('simple-input-invalid');
     }
     else{
-        document.getElementById('n1-error').innerHTML = ''
+        document.getElementById('n1-error').innerHTML = '';
         styleN1.classList.remove('simple-input-invalid');
     }
 
@@ -35,7 +29,8 @@ document.getElementById('form-grades').addEventListener('input', function(event)
         styleAp.classList.add('simple-input-invalid');
     }
     else{
-        document.getElementById('ap-error').innerHTML = ''
+        document.getElementById('ap-error').innerHTML = '';
+        styleN1.classList.remove('simple-input-invalid');
     }
 
     // validação AI
@@ -45,7 +40,8 @@ document.getElementById('form-grades').addEventListener('input', function(event)
         styleAi.classList.add('simple-input-invalid');
     }
     else{
-        document.getElementById('ai-error').innerHTML = ''
+        document.getElementById('ai-error').innerHTML = '';
+        styleN1.classList.remove('simple-input-invalid');
     }
 
     // validação N3
@@ -55,7 +51,8 @@ document.getElementById('form-grades').addEventListener('input', function(event)
         styleN3.classList.add('simple-input-invalid');
     }
     else{
-        document.getElementById('n3-error').innerHTML = ''
+        document.getElementById('n3-error').innerHTML = '';
+        styleN1.classList.remove('simple-input-invalid');
     }
 
 });
