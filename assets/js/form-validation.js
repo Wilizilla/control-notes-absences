@@ -30,7 +30,7 @@ document.getElementById('form-grades').addEventListener('input', function(event)
     }
     else{
         document.getElementById('ap-error').innerHTML = '';
-        styleN1.classList.remove('simple-input-invalid');
+        styleAp.classList.remove('simple-input-invalid');
     }
 
     // validação AI
@@ -41,7 +41,7 @@ document.getElementById('form-grades').addEventListener('input', function(event)
     }
     else{
         document.getElementById('ai-error').innerHTML = '';
-        styleN1.classList.remove('simple-input-invalid');
+        styleAi.classList.remove('simple-input-invalid');
     }
 
     // validação N3
@@ -52,7 +52,7 @@ document.getElementById('form-grades').addEventListener('input', function(event)
     }
     else{
         document.getElementById('n3-error').innerHTML = '';
-        styleN1.classList.remove('simple-input-invalid');
+        styleN3.classList.remove('simple-input-invalid');
     }
 
 });
