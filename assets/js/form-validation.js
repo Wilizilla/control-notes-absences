@@ -25,7 +25,6 @@ document.getElementById('form-grades').addEventListener('input', function(event)
     // validação AP
     if (validationAp > 10){
         document.getElementById('ap-error').innerHTML = 'O valor da nota não pode ser maior que 10.';
-        styleAp.classList.remove('simple-input');
         styleAp.classList.add('simple-input-invalid');
     }
     else{
@@ -36,7 +35,6 @@ document.getElementById('form-grades').addEventListener('input', function(event)
     // validação AI
     if (validationAi > 10){
         document.getElementById('ai-error').innerHTML = 'O valor da nota não pode ser maior que 10.';
-        styleAi.classList.remove('simple-input');
         styleAi.classList.add('simple-input-invalid');
     }
     else{
@@ -47,7 +45,6 @@ document.getElementById('form-grades').addEventListener('input', function(event)
     // validação N3
     if (validationN3 > 10){
         document.getElementById('n3-error').innerHTML = 'O valor da nota não pode ser maior que 10.';
-        styleN3.classList.remove('simple-input');
         styleN3.classList.add('simple-input-invalid');
     }
     else{
