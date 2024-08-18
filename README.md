@@ -16,6 +16,8 @@ As validações do formulário foram feitas a partir de exemplos da internet e c
 
 ### Done
 • Mensagens de erro nos botões.
+• npm iniciado
+• express instalado
 
 ### Doing
 • Login para usuários.
@@ -30,7 +32,6 @@ As validações do formulário foram feitas a partir de exemplos da internet e c
 • Regras para bloquear os botões até que o anterior seja preenchido.
 
 • Tooltip e outros recursos de ajuda para explicando o que é N1, N2 e etc.
-
 
 
 *Eng*
