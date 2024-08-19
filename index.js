@@ -9,7 +9,7 @@ app.use(express.static(path.join(__dirname, 'public')))
 // servir o arquivo html na rota raiz '/'
 
 app.get('/', (req, res) => {
-    res.sendfile(path.join(__dirname, 'public', 'grades.html'));
+    res.sendFile(path.join(__dirname, 'public', 'grades.html'));
 }); 
 
 app.listen(3000, () =>{
