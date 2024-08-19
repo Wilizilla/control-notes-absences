@@ -18,6 +18,13 @@ formulario.addEventListener('submit', function(event) {
     let ai = Number(aiString);
     let n3 = Number(n3String);
 
+     // Ajusta as casas decimais
+
+    n1 = parseFloat(n1.toFixed(2));
+    ai = parseFloat(ai.toFixed(2));
+    ap = parseFloat(ap.toFixed(2));
+    n3 = parseFloat(n3.toFixed(2));
+
     let n2 = (ap+ai)/2;
     let media = (n1+n2)/2; // inicializada como n1+n2
     let logStatus; // log status 
@@ -26,8 +33,12 @@ formulario.addEventListener('submit', function(event) {
     let prevGrade; // Guarda a informação de nota que precisa ser atingida em N2 ou N3
     let resolve; // chama a função para limpar as variaveis
 
+    //ajusta as casas decimais
+    media = media.toFixed(2); 
+    n2 = n2.toFixed(2); 
+    
     // Função que define o status - Vai ser usada para gerar log.
-    function printStatus(media) {
+    function printStatus(a) {
         if( media > 6) { 
             logStatus = ('Aprovado(a)')
 
@@ -41,18 +52,19 @@ formulario.addEventListener('submit', function(event) {
     };
     
     // Função que define a mensagem deve ser enviada quando houver N3
-    function finalGrade (media, n1, n2, n3) {
+    // Os parâmetros são  os seguintes: media = b, N1 =c, N2 = d, N3 = e
+    function finalGrade (b, c, d, e) {
 
         // identifica qual a maior nota e guarda a nota necessária para atingir a média.
-        if (n1 >= n2) {
-            prevGrade = 12-n1
+        if (c >= d) {
+            prevGrade = 12-c
             console.log('calculei substituindo n2')
         } else {
-            prevGrade = 12-n2
+            prevGrade = 12-d
             console.log('calculei substituindo n1')
         }
 
-        console.log('Média: ' + media)
+        console.log('Média: ' + b)
 
         // Configura a mensagem
         if (media < 6 && n3 == '') {
@@ -90,7 +102,7 @@ formulario.addEventListener('submit', function(event) {
         console.log(statusNow);
     }
 
-    // Função para resetar a caixa de mensagem
+    // Função para resetar a mensagem
     function clearMsg(){
         document.getElementById("message-alert").style.display = "none";
         document.getElementById("message-default").style.display = "none";
@@ -99,14 +111,6 @@ formulario.addEventListener('submit', function(event) {
     
     // Função para resetar as variaveis
     function clearGrades(){
-
-    let n2 = (ap+ai)/2;
-    let media = (n1+n2)/2 ;
-    let statusNow; // Indica se atingiu ou não a média 
-    let logStatus; // log status 
-    let resetMsg; // chama a função clear Msg
-    let setMsg; // chama a função finalGrade
-    let prevGrade; // Guarda a informação de nota que precisa ser atingida em N2 ou N3
 
     document.getElementById("p-n1").innerHTML = '--';
     document.getElementById("p-n2").innerHTML = '--';
@@ -136,6 +140,8 @@ formulario.addEventListener('submit', function(event) {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
         prevGrade = 12-n1; // configura
+        prevGrade = Math.round(prevGrade * 100) / 100;
+
 
         document.getElementById("p-n1").innerHTML = n1;
  
@@ -150,6 +156,7 @@ formulario.addEventListener('submit', function(event) {
 
         document.getElementById("p-n1").innerHTML = n1;
         prevGrade = 24 - ap - (2 * n1); // Em alguns casos está gerando números negativos
+        prevGrade = Math.round(prevGrade * 100) / 100;
 
         document.getElementById("message-default").style.display = "flex";
         document.getElementById("text-default").innerHTML = "Você precisa tirar " + prevGrade + " ou mais em AI para manter a média.";
