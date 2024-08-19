@@ -119,6 +119,8 @@ formulario.addEventListener('submit', function(event) {
 
     };
 
+    //Calculo principal ############################
+
     if (n1 > 10 || ap > 10 || ai > 10 || n3 > 10 ) {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
@@ -136,7 +138,7 @@ formulario.addEventListener('submit', function(event) {
         document.getElementById("text-alert").innerHTML = "Hmmm… Não há informações suficientes para calcular sua nota…";
         document.getElementById("emoji-alert").innerHTML = "🧐";
 
-    } else if (ap == '') {
+    } else if (ap == '' && n3 == '') {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
         prevGrade = 12-n1; // configura
@@ -150,7 +152,7 @@ formulario.addEventListener('submit', function(event) {
         document.getElementById("emoji-default").innerHTML = "📚";
 
 
-    } else if (ai == '') {
+    } else if (ai == '' && n3 == '') {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
 
@@ -188,6 +190,7 @@ formulario.addEventListener('submit', function(event) {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
         media = (n1+n2)/2; // assumi que se a nota em n3 for igual a n1 e n2 ela não substitui nada
+        media = media.toFixed(2); //aqui
 
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
@@ -200,6 +203,7 @@ formulario.addEventListener('submit', function(event) {
         resolve = clearGrades(); // reseta variaveis
         resetMsg = clearMsg(); // reseta mensagens
         media = (n1+n3)/2;// recalcula média
+        media = media.toFixed(2); //aqui
 
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
@@ -212,6 +216,7 @@ formulario.addEventListener('submit', function(event) {
         resolve = clearGrades(); // reseta variaveis
         resetMsg = clearMsg(); // reseta mensagens
         media = (n2+n3)/2; // recalcula média
+        media = media.toFixed(2); //aqui
 
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
