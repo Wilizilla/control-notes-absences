@@ -19,7 +19,6 @@ formulario.addEventListener('submit', function(event) {
     let n3 = Number(n3String);
 
      // Ajusta as casas decimais
-
     n1 = parseFloat(n1.toFixed(2));
     ai = parseFloat(ai.toFixed(2));
     ap = parseFloat(ap.toFixed(2));
@@ -57,7 +56,13 @@ formulario.addEventListener('submit', function(event) {
             logStatus = ('Reprovado')
         }
 
-        console.log('Status: ' + logStatus)
+        console.log('Status: ' + logStatus);
+        console.log('N1: '+ n1);
+        console.log('N2: '+ n2);
+        console.log('ap: '+ ap);
+        console.log('ai: '+ ai);
+        console.log('N3: '+ n3);
+        console.log('Média: '+ media);
     };
     
     // Função que define a mensagem deve ser enviada quando houver N3
@@ -130,6 +135,7 @@ formulario.addEventListener('submit', function(event) {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
 
+        document.getElementById("final-result").style.display = "flex"; // aqui
         document.getElementById("message-alert").style.display = "flex";
         document.getElementById("text-alert").innerHTML = "Hmmm… Parece que há algum erro nas suas notas. </br> <i> Sua nota não pode ser maior que 10.</i>";
         document.getElementById("emoji-alert").innerHTML = "🫠";
@@ -142,6 +148,7 @@ formulario.addEventListener('submit', function(event) {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
         
+        document.getElementById("final-result").style.display = "flex"; // aqui
         document.getElementById("message-alert").style.display = "flex";
         document.getElementById("text-alert").innerHTML = "Hmmm… Não há informações suficientes para calcular sua nota…";
         document.getElementById("emoji-alert").innerHTML = "🧐";
@@ -157,6 +164,7 @@ formulario.addEventListener('submit', function(event) {
 
         document.getElementById("p-n1").innerHTML = n1;
  
+        document.getElementById("final-result").style.display = "flex"; // aqui
         document.getElementById("message-default").style.display = "flex";
         document.getElementById("text-default").innerHTML = "Você precisa tirar <b>" + prevGrade + " ou mais em N2</b> para manter a média. <i>(N2 é igual a média entre AP e AI)</>";
         document.getElementById("emoji-default").innerHTML = "📚";
@@ -173,6 +181,7 @@ formulario.addEventListener('submit', function(event) {
         prevGrade = 24 - ap - (2 * n1); // Em alguns casos está gerando números negativos
         prevGrade = Math.round(prevGrade * 100) / 100;
 
+        document.getElementById("final-result").style.display = "flex"; // aqui
         document.getElementById("message-default").style.display = "flex";
         document.getElementById("text-default").innerHTML = "Você precisa tirar <b>" + prevGrade + " ou mais em AI </b>para manter a média.";
         document.getElementById("emoji-default").innerHTML = "📚";
@@ -188,6 +197,7 @@ formulario.addEventListener('submit', function(event) {
         document.getElementById("p-n2").innerHTML = n2;
         document.getElementById("p-media").innerHTML = media;
 
+        document.getElementById("final-result").style.display = "flex"; // aqui
         document.getElementById("message-success").style.display = "flex";
         document.getElementById("text-success").innerHTML = "Parabéns, <b>você foi aprovado!!!</b>";
         document.getElementById("emoji-success").innerHTML = "🎉";
@@ -199,6 +209,7 @@ formulario.addEventListener('submit', function(event) {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
 
+        document.getElementById("final-result").style.display = "flex"; // aqui
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
         document.getElementById("p-media").innerHTML = media;
@@ -214,6 +225,7 @@ formulario.addEventListener('submit', function(event) {
         //media = (n1+n2)/2; // assumi que se a nota em n3 for igual a n1 e n2 ela não substitui nada
         //media = media.toFixed(2); //não é necessário
 
+        document.getElementById("final-result").style.display = "flex"; // aqui
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
         document.getElementById("p-n3").innerHTML = n3;
@@ -228,9 +240,11 @@ formulario.addEventListener('submit', function(event) {
         resetMsg = clearMsg(); // reseta mensagens
         /* n3 = Number(n3);
         n1 = Number(n1); */
+        
         media = (n1+n3)/2;// recalcula média
         media = media.toFixed(2); //não é necessário
 
+        document.getElementById("final-result").style.display = "flex"; // aqui
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
         document.getElementById("p-n3").innerHTML = n3;
@@ -254,6 +268,7 @@ formulario.addEventListener('submit', function(event) {
         media = media.toFixed(2); //não é necessário
         console.log('parte 04');
 
+        document.getElementById("final-result").style.display = "flex"; // aqui
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
         document.getElementById("p-n3").innerHTML = n3;
@@ -263,13 +278,6 @@ formulario.addEventListener('submit', function(event) {
 
         print = printStatus(media);
         console.log('Média menor que 6 e N1 menor que N2');
-        console.log('N1: '+ n1);
-        console.log('N2: '+ n2);
-        console.log('N3: '+ n3);
-        console.log('Média: '+ media);
-        console.log('ap: '+ ap);
-        console.log('ai: '+ ai);
-
 
     } else {
         resolve = clearGrades(); // reseta variaveis
@@ -277,6 +285,7 @@ formulario.addEventListener('submit', function(event) {
         media = (n2+n3)/2; // recalcula média
         media = media.toFixed(2); // não é necessário
 
+        document.getElementById("final-result").style.display = "flex"; // aqui
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
         document.getElementById("p-n3").innerHTML = n3;
