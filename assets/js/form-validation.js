@@ -10,8 +10,6 @@ document.getElementById('form-grades').addEventListener('input', function(event)
     let validationAi = styleAi.value;
     let validationN3 = styleN3.value;
 
-    // event.preventDefault(); // Impede o envio do formulário se houver campos inválidos
-
     // validação N1 ###################################
     if (validationN1 > 10){
         document.getElementById('n1-error').innerHTML = 'O valor da nota não pode ser maior que 10.';

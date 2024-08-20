@@ -21,7 +21,9 @@
     --link-hover-color: #07c1ce;
     --border-color: #e8e8e8;
     --box-color-light: #ffffff;
+
     --button-color: #ce036f;
+    --button-color-secondary: #9d1b60;
     --default-alert: #2267f2;
     --default-alert-opacity: #4482ff23;
     --default-text-alert: #0a3690;
@@ -114,6 +116,8 @@ button{
     margin: var(--gap-m) var(--gap-xs) var(--gap-m) var(--gap-xs);
     font-size: var(--font-size-m);
     font-weight: 800;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
 }
 
 button:hover{
