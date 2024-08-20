@@ -32,23 +32,32 @@ formulario.addEventListener('submit', function(event) {
     let setMsg; // chama a função finalGrade
     let prevGrade; // Guarda a informação de nota que precisa ser atingida em N2 ou N3
     let resolve; // chama a função para limpar as variaveis
+    let print; //Chama a função printStatus
 
-    //ajusta as casas decimais
+    //ajusta os calculos para 2 casas decimais
     media = media.toFixed(2); 
-    n2 = n2.toFixed(2); 
+    n2 = parseFloat(n2.toFixed(2)); 
     
     // Função que define o status - Vai ser usada para gerar log.
     function printStatus(a) {
-        if( media > 6) { 
+        
+        if ( media >= 6) { 
             logStatus = ('Aprovado(a)')
 
+        } else if ( n3 == '' && ap =='' && ai =='') {
+            logStatus = ('Aguardando AP')
+
+        } else if ( n3 == '' && ai =='') {
+            logStatus = ('Aguardando AI')
+        
         } else if ( n3 == '') {
-            logStatus = ('Em recuperação')
+            logStatus = ('Aguardando N3')
         
         } else {
-            logStatus = ('Reprovado(a)')
+            logStatus = ('Reprovado')
         }
-        console.log(logStatus, 'gerado pela func. printStatus')
+
+        console.log('Status: ' + logStatus)
     };
     
     // Função que define a mensagem deve ser enviada quando houver N3
@@ -86,7 +95,6 @@ formulario.addEventListener('submit', function(event) {
             document.getElementById("text-alert").innerHTML = "<b>Você não atingiu a média.</b> </br> <i>Entre em contato com a secretária para saber como refazer a matéria.</i>";
             document.getElementById("emoji-alert").innerHTML = "😭";
 
-            console.log("status: " + statusNow );
             console.log("Média: " + media );
 
         } else {
@@ -94,12 +102,9 @@ formulario.addEventListener('submit', function(event) {
             document.getElementById("text-alert").innerHTML = "<b>Algo deu errado!!!</b>";
             document.getElementById("emoji-alert").innerHTML = "😱";
 
-            console.log("status: " + statusNow );
             console.log("Média: " + media );
         }
 
-        console.log(prevGrade);
-        console.log(statusNow);
     }
 
     // Função para resetar a mensagem
@@ -129,6 +134,9 @@ formulario.addEventListener('submit', function(event) {
         document.getElementById("text-alert").innerHTML = "Hmmm… Parece que há algum erro nas suas notas. </br> <i> Sua nota não pode ser maior que 10.</i>";
         document.getElementById("emoji-alert").innerHTML = "🫠";
 
+        print = printStatus(media);
+        console.log('Não há notas');
+
 
     } else if (n1 == '') {
         resetMsg = clearMsg(); // reseta mensagens
@@ -138,18 +146,23 @@ formulario.addEventListener('submit', function(event) {
         document.getElementById("text-alert").innerHTML = "Hmmm… Não há informações suficientes para calcular sua nota…";
         document.getElementById("emoji-alert").innerHTML = "🧐";
 
+        print = printStatus(media);
+        console.log('N1 vazio');
+
     } else if (ap == '' && n3 == '') {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
         prevGrade = 12-n1; // configura
         prevGrade = Math.round(prevGrade * 100) / 100;
 
-
         document.getElementById("p-n1").innerHTML = n1;
  
         document.getElementById("message-default").style.display = "flex";
         document.getElementById("text-default").innerHTML = "Você precisa tirar <b>" + prevGrade + " ou mais em N2</b> para manter a média. <i>(N2 é igual a média entre AP e AI)</>";
         document.getElementById("emoji-default").innerHTML = "📚";
+
+        print = printStatus(media);
+        console.log('AP vazio');
 
 
     } else if (ai == '' && n3 == '') {
@@ -164,6 +177,9 @@ formulario.addEventListener('submit', function(event) {
         document.getElementById("text-default").innerHTML = "Você precisa tirar <b>" + prevGrade + " ou mais em AI </b>para manter a média.";
         document.getElementById("emoji-default").innerHTML = "📚";
 
+        print = printStatus(media);
+        console.log('AI vazio');
+
     } else if (media >= 6) {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
@@ -176,6 +192,9 @@ formulario.addEventListener('submit', function(event) {
         document.getElementById("text-success").innerHTML = "Parabéns, <b>você foi aprovado!!!</b>";
         document.getElementById("emoji-success").innerHTML = "🎉";
 
+        print = printStatus(media);
+        console.log('média maior que 6');
+
     } else if (n3 == '') {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
@@ -186,11 +205,14 @@ formulario.addEventListener('submit', function(event) {
 
         setMsg = finalGrade(media, n1, n2, n3);
 
+        print = printStatus(media);
+        console.log('Média menor que 6 e N3 vazio');
+
     } else if (n3 <= n1 && n3 <= n2) {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
         //media = (n1+n2)/2; // assumi que se a nota em n3 for igual a n1 e n2 ela não substitui nada
-        //media = media.toFixed(2); //aqui
+        //media = media.toFixed(2); //não é necessário
 
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
@@ -198,12 +220,16 @@ formulario.addEventListener('submit', function(event) {
         document.getElementById("p-media").innerHTML = media;
 
         setMsg = finalGrade(media, n1, n2, n3);
+        print = printStatus(media);
+        console.log('Média menor que 6 e N3 menor que N1 e N2');
 
     } else if (n1 >= n2) {
         resolve = clearGrades(); // reseta variaveis
         resetMsg = clearMsg(); // reseta mensagens
+        /* n3 = Number(n3);
+        n1 = Number(n1); */
         media = (n1+n3)/2;// recalcula média
-        //media = media.toFixed(2); //aqui
+        media = media.toFixed(2); //não é necessário
 
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
@@ -211,12 +237,45 @@ formulario.addEventListener('submit', function(event) {
         document.getElementById("p-media").innerHTML = media;
 
         setMsg = finalGrade(media, n1, n2, n3);
+
+        print = printStatus(media);
+        console.log('Média menor que 6 e N1 maior que N2');
+
+    } else if (n1 <= n2) {
+        resolve = clearGrades(); // reseta variaveis
+        console.log('parte 01');
+        resetMsg = clearMsg(); // reseta mensagens
+        console.log('parte 02');
+/* 
+        n3 = Number(n3);
+        n2 = Number(n2); */
+        media = (n3 + n2)/2;// recalcula média
+        console.log('parte 03');
+        media = media.toFixed(2); //não é necessário
+        console.log('parte 04');
+
+        document.getElementById("p-n1").innerHTML = n1;
+        document.getElementById("p-n2").innerHTML = n2;
+        document.getElementById("p-n3").innerHTML = n3;
+        document.getElementById("p-media").innerHTML = media;
+
+        setMsg = finalGrade(media, n1, n2, n3);
+
+        print = printStatus(media);
+        console.log('Média menor que 6 e N1 menor que N2');
+        console.log('N1: '+ n1);
+        console.log('N2: '+ n2);
+        console.log('N3: '+ n3);
+        console.log('Média: '+ media);
+        console.log('ap: '+ ap);
+        console.log('ai: '+ ai);
+
 
     } else {
         resolve = clearGrades(); // reseta variaveis
         resetMsg = clearMsg(); // reseta mensagens
-        //media = (n2+n3)/2; // recalcula média
-        //media = media.toFixed(2); //aqui
+        media = (n2+n3)/2; // recalcula média
+        media = media.toFixed(2); // não é necessário
 
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
@@ -224,6 +283,9 @@ formulario.addEventListener('submit', function(event) {
         document.getElementById("p-media").innerHTML = media;
 
         setMsg = finalGrade(media, n1, n2, n3);
+
+        print = printStatus(media);
+        console.log('Média menor que 6 e N1 menor que N2');
 
     }    
 
