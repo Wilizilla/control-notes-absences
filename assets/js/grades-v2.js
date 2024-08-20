@@ -148,7 +148,7 @@ formulario.addEventListener('submit', function(event) {
         document.getElementById("p-n1").innerHTML = n1;
  
         document.getElementById("message-default").style.display = "flex";
-        document.getElementById("text-default").innerHTML = "Você precisa tirar <b>" + prevGrade + " ou mais</b> em N2 para manter a média. <i>(N2 é igual a média entre AP e AI)</>";
+        document.getElementById("text-default").innerHTML = "Você precisa tirar <b>" + prevGrade + " ou mais em N2</b> para manter a média. <i>(N2 é igual a média entre AP e AI)</>";
         document.getElementById("emoji-default").innerHTML = "📚";
 
 
@@ -161,7 +161,7 @@ formulario.addEventListener('submit', function(event) {
         prevGrade = Math.round(prevGrade * 100) / 100;
 
         document.getElementById("message-default").style.display = "flex";
-        document.getElementById("text-default").innerHTML = "Você precisa tirar " + prevGrade + " ou mais em AI para manter a média.";
+        document.getElementById("text-default").innerHTML = "Você precisa tirar <b>" + prevGrade + " ou mais em AI </b>para manter a média.";
         document.getElementById("emoji-default").innerHTML = "📚";
 
     } else if (media >= 6) {
