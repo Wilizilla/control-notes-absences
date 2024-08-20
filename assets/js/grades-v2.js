@@ -173,7 +173,7 @@ formulario.addEventListener('submit', function(event) {
         document.getElementById("p-media").innerHTML = media;
 
         document.getElementById("message-success").style.display = "flex";
-        document.getElementById("text-success").innerHTML = "Parabéns, você foi aprovado!!!";
+        document.getElementById("text-success").innerHTML = "Parabéns, <b>você foi aprovado!!!</b>";
         document.getElementById("emoji-success").innerHTML = "🎉";
 
     } else if (n3 == '') {
@@ -189,8 +189,8 @@ formulario.addEventListener('submit', function(event) {
     } else if (n3 <= n1 && n3 <= n2) {
         resetMsg = clearMsg(); // reseta mensagens
         resolve = clearGrades(); // reseta variaveis
-        media = (n1+n2)/2; // assumi que se a nota em n3 for igual a n1 e n2 ela não substitui nada
-        media = media.toFixed(2); //aqui
+        //media = (n1+n2)/2; // assumi que se a nota em n3 for igual a n1 e n2 ela não substitui nada
+        //media = media.toFixed(2); //aqui
 
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
@@ -203,7 +203,7 @@ formulario.addEventListener('submit', function(event) {
         resolve = clearGrades(); // reseta variaveis
         resetMsg = clearMsg(); // reseta mensagens
         media = (n1+n3)/2;// recalcula média
-        media = media.toFixed(2); //aqui
+        //media = media.toFixed(2); //aqui
 
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
@@ -215,8 +215,8 @@ formulario.addEventListener('submit', function(event) {
     } else {
         resolve = clearGrades(); // reseta variaveis
         resetMsg = clearMsg(); // reseta mensagens
-        media = (n2+n3)/2; // recalcula média
-        media = media.toFixed(2); //aqui
+        //media = (n2+n3)/2; // recalcula média
+        //media = media.toFixed(2); //aqui
 
         document.getElementById("p-n1").innerHTML = n1;
         document.getElementById("p-n2").innerHTML = n2;
