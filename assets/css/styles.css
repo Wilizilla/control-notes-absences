@@ -308,6 +308,10 @@ hr{
     margin-bottom: var(--border-radius-s);
 }
 
+#final-result{
+    display: none;
+}
+
 .results{
     /* background-color: var(--text-field-color); */
     border-radius: var(--border-radius-m);
